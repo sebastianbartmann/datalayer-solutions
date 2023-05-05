@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model event_parameters {
+  event_id     Int
+  parameter_id Int
+
+  @@id([event_id, parameter_id])
+}
+
+model event_triggers {
+  event_id   Int
+  trigger_id Int
+
+  @@id([event_id, trigger_id])
+}
+
+model events {
+  id   Int    @id @default(autoincrement())
+  name String @unique(map: "name") @db.VarChar(255)
+}
+
+model parameters {
+  id   Int    @id @default(autoincrement())
+  name String @unique(map: "name") @db.VarChar(255)
+}
+
+model triggers {
+  id   Int    @id @default(autoincrement())
+  name String @unique(map: "name") @db.VarChar(255)
+}

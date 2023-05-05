@@ -1,2 +1,35 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<div class="container">
+	<div class="hero min-h-screen">
+		<div class="hero-content text-center">
+			<div class="max-w-2lg">
+				<h1 class="text-4xl font-extrabold">Welcome to datalayer.solutions</h1>
+				<h2 class="mb-5 text-3xl font-bold">The place to get your events in check.</h2>
+				<p>Focused on GA4 for now...</p>
+
+				<div class="flex m-8">
+					<div class="flex-auto m-2">
+						<a href="/events" class="btn rounded text-xl bg-secondary text-accent hover:bg-primary">
+							Events
+						</a>
+					</div>
+					<div class="flex-auto m-2">
+						<a
+							href="/parameters"
+							class="btn rounded text-xl bg-secondary text-accent hover:bg-primary"
+						>
+							Parameters
+						</a>
+					</div>
+					<div class="flex-auto m-2">
+						<a
+							href="/triggers"
+							class="btn rounded text-xl bg-secondary text-accent hover:bg-primary"
+						>
+							Triggers
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

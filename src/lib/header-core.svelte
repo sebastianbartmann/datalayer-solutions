@@ -9,14 +9,17 @@
 			<div class="navbar-start">
 				<div class="flex m-8">
 					<div class="flex-auto m-2">
-						<a href="/events" class="btn btn-sm rounded bg-secondary text-accent hover:bg-primary">
+						<a
+							href="/events"
+							class="px-2 py-1 underline rounded bg-secondary text-accent hover:bg-primary"
+						>
 							Events
 						</a>
 					</div>
 					<div class="flex-auto m-2">
 						<a
 							href="/parameters"
-							class="btn btn-sm rounded bg-secondary text-accent hover:bg-primary"
+							class="px-2 py-1 underline rounded bg-secondary text-accent hover:bg-primary"
 						>
 							Parameters
 						</a>
@@ -24,7 +27,7 @@
 					<div class="flex-auto m-2">
 						<a
 							href="/triggers"
-							class="btn btn-sm rounded bg-secondary text-accent hover:bg-primary"
+							class="px-2 py-1 underline rounded bg-secondary text-accent hover:bg-primary"
 						>
 							Triggers
 						</a>

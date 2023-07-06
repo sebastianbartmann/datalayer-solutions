@@ -7,11 +7,17 @@
 	export let data: PageData;
 
 	let clipboardText = '';
+	let currentID: Number = -1;
 
 	const handler = new DataHandler(data.feed, { rowsPerPage: 50 });
 	const rows = handler.getRows();
 
 	$: data, handler.setRows(data.feed);
+
+	async function showParams(id: Number) {
+		currentID = id;
+		paramDialog.showModal();
+	}
 
 	async function copyAllToClipboard() {
 		try {
@@ -45,6 +51,10 @@
 </script>
 
 <div class="bg-gray-100 w-full py-4">
+	<dialog id="paramDialog">
+		<h3 class="font-bold text-lg">Hello {currentID}!</h3>
+		<p class="py-4">Press ESC to close</p>
+	</dialog>
 	<div class="container mx-auto px-4 flex items-center">
 		<h1 class="text-2xl font-semibold">Events</h1>
 		<div class="flex">
@@ -79,6 +89,7 @@
 		{/if}
 	</div>
 </div>
+
 <div class="w-full min-h-screen bg-gray-100">
 	<div class="container mx-auto px-4 py-6 flex">
 		<!-- Left column -->
@@ -88,12 +99,10 @@
 					<thead>
 						<tr>
 							<th />
-							<Th {handler} orderBy="id">ID</Th>
 							<Th {handler} orderBy="name">Name</Th>
 						</tr>
 						<tr>
 							<th />
-							<ThFilter {handler} filterBy="id" />
 							<ThFilter {handler} filterBy="name" />
 						</tr>
 					</thead>
@@ -101,25 +110,37 @@
 						{#each $rows as row}
 							<tr>
 								<td>
-									<form method="POST" action="?/delete" use:enhance>
-										<input
-											value={row.id}
-											class="border"
-											hidden
-											required
-											name="id"
-											autocomplete="off"
-										/>
-										<button
-											class="btn btn-xs rounded bg-red-500 text-accent hover:bg-primary"
-											name="batchCreate"
-										>
-											del
-										</button>
-									</form>
+									<div class="mr-2">
+										<form method="POST" action="?/delete" use:enhance>
+											<input
+												value={row.id}
+												class="border"
+												hidden
+												required
+												name="id"
+												autocomplete="off"
+											/>
+											<button
+												class="btn btn-xs rounded bg-red-500 text-accent hover:bg-primary"
+												name="batchCreate"
+											>
+												del
+											</button>
+										</form>
+									</div>
 								</td>
-								<td>{row.id}</td>
 								<td>{row.name}</td>
+								<td>
+									<div class="mr-2">
+										<button
+											class="btn btn-xs rounded bg-orange-300 text-accent hover:bg-primary"
+											name="batchCreate"
+											on:click={showParams(row.id)}
+										>
+											Params
+										</button>
+									</div>
+								</td>
 							</tr>
 						{/each}
 					</tbody>

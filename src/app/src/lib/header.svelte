@@ -1,8 +1,8 @@
 <nav>
 	<div
 		class="
-	sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-30 backdrop-blur transition-all duration-100
-	bg-secondary text-base-content shadow-sm
+	sticky top-0 z-30 flex h-16 w-full justify-center backdrop-blur transition-all duration-100
+	 text-base-content shadow-sm
 	"
 	>
 		<div class="navbar w-full">
@@ -26,7 +26,7 @@
 					</div>
 					<ul
 						tabindex="-1"
-						class="text-blue5 menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+						class="text-blue5 menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52"
 					>
 						<li><a class="text-lg" href="/event-data">event-data</a></li>
 					</ul>
@@ -41,7 +41,7 @@
 					class="mr-2 w-8 h-8 btn btn-ghost btn-circle"
 				>
 					<div class="indicator">
-						<img alt="github" src="./github-mark.png" />
+						<img alt="github" src="/github-mark-white.png" />
 					</div>
 				</a>
 			</div>

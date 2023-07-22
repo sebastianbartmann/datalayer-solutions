@@ -8,25 +8,13 @@
 
 				<div class="flex m-8">
 					<div class="flex-auto m-2">
-						<a href="/events" class="btn rounded text-xl bg-secondary text-accent hover:bg-primary">
-							Events
-						</a>
+						<a href="/events" class="btn rounded text-xl">Events</a>
 					</div>
 					<div class="flex-auto m-2">
-						<a
-							href="/parameters"
-							class="btn rounded text-xl bg-secondary text-accent hover:bg-primary"
-						>
-							Parameters
-						</a>
+						<a href="/parameters" class="btn rounded text-xl">Parameters</a>
 					</div>
 					<div class="flex-auto m-2">
-						<a
-							href="/triggers"
-							class="btn rounded text-xl bg-secondary text-accent hover:bg-primary"
-						>
-							Triggers
-						</a>
+						<a href="/triggers" class="btn rounded text-xl">Triggers</a>
 					</div>
 				</div>
 			</div>

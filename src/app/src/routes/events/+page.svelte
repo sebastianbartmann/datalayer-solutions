@@ -50,7 +50,7 @@
 	}
 </script>
 
-<div class="bg-gray-100 w-full py-4">
+<div class="w-full py-4">
 	<dialog id="paramDialog">
 		<h3 class="font-bold text-lg">Hello {currentID}!</h3>
 		<p class="py-4">Press ESC to close</p>
@@ -58,28 +58,11 @@
 	<div class="container mx-auto px-4 flex items-center">
 		<h1 class="text-2xl font-semibold">Events</h1>
 		<div class="flex">
-			<button
-				class="btn btn-sm rounded bg-secondary text-accent hover:bg-primary mx-1 ml-2"
-				on:click={copyAllToClipboard}
-			>
-				copyAll
-			</button>
-			<button
-				class="btn btn-sm rounded bg-secondary text-accent hover:bg-primary mx-1"
-				on:click={copyNamesToClipboard}
-			>
-				copyNames
-			</button>
-			<button
-				class="btn btn-sm rounded bg-secondary text-accent hover:bg-primary mx-1"
-				on:click={readFromClipboard}
-			>
-				read
-			</button>
+			<button class="btn btn-sm rounded mx-1 ml-2" on:click={copyAllToClipboard}>copyAll</button>
+			<button class="btn btn-sm rounded mx-1" on:click={copyNamesToClipboard}>copyNames</button>
+			<button class="btn btn-sm rounded mx-1" on:click={readFromClipboard}>read</button>
 			<form method="POST" action="?/deleteAll" use:enhance>
-				<button class="btn btn-sm rounded bg-secondary text-accent hover:bg-primary mx-1">
-					deleteAll
-				</button>
+				<button class="btn btn-sm rounded mx-1">deleteAll</button>
 			</form>
 		</div>
 	</div>
@@ -90,10 +73,10 @@
 	</div>
 </div>
 
-<div class="w-full min-h-screen bg-gray-100">
+<div class="w-full min-h-screen">
 	<div class="container mx-auto px-4 py-6 flex">
 		<!-- Left column -->
-		<div class="w-1/2 bg-white p-4 rounded shadow">
+		<div class="w-1/2 p-4 rounded shadow">
 			<div class=" flex flex-col justify-center">
 				<table class="table-auto">
 					<thead>
@@ -120,12 +103,7 @@
 												name="id"
 												autocomplete="off"
 											/>
-											<button
-												class="btn btn-xs rounded bg-red-500 text-accent hover:bg-primary"
-												name="batchCreate"
-											>
-												del
-											</button>
+											<button class="btn btn-xs rounded" name="batchCreate">del</button>
 										</form>
 									</div>
 								</td>
@@ -133,12 +111,19 @@
 								<td>
 									<div class="mr-2">
 										<button
-											class="btn btn-xs rounded bg-orange-300 text-accent hover:bg-primary"
+											class="btn btn-xs rounded"
 											name="batchCreate"
 											on:click={showParams(row.id)}
 										>
 											Params
 										</button>
+										<a
+											class="btn btn-xs rounded"
+											name="batchCreate"
+											href={'/events/' + row.id + '/parameter'}
+										>
+											details
+										</a>
 									</div>
 								</td>
 							</tr>
@@ -149,7 +134,7 @@
 		</div>
 
 		<!-- Right column -->
-		<div class="w-1/2 bg-white p-4 rounded shadow ml-4">
+		<div class="w-1/2 p-4 rounded shadow ml-4">
 			<div class="card">
 				<div class="card-body">
 					<h2 class="card-title">Create an event</h2>
@@ -167,12 +152,7 @@
 						</label>
 
 						<div class="card-actions my-2">
-							<button
-								class="btn btn-sm rounded bg-secondary text-accent hover:bg-primary"
-								name="batchCreate"
-							>
-								Create
-							</button>
+							<button class="btn btn-sm rounded" name="batchCreate">Create</button>
 						</div>
 					</form>
 					<div>{clipboardText}</div>
@@ -189,12 +169,7 @@
 						</label>
 						<br />
 						<div class="card-actions my-2">
-							<button
-								class="btn btn-sm rounded bg-secondary text-accent hover:bg-primary"
-								name="batchCreate"
-							>
-								batch Create
-							</button>
+							<button class="btn btn-sm rounded" name="batchCreate">batch Create</button>
 						</div>
 					</form>
 				</div>
